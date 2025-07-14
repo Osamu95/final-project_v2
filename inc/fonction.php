@@ -128,4 +128,40 @@ ini_set("display error", "1");
         $result = mysqli_query(dbconnect(),$sql);
     }
 
+    function rech_categorie($name){
+        $sql = "SELECT * from v_objet_detail
+        where id_categorie = $name";
+        $result = mysqli_query(dbconnect(), $sql);
+        echo $sql;
+        
+        if ($result){
+            $liste = [];
+            while ($row = mysqli_fetch_assoc($result)){
+                $liste[]= $row;
+            } 
+            return $liste;
+        }else{
+            $liste = [];
+            return $liste;
+        }
+    }
+
+    function rech_object($name){
+        $sql = "SELECT * from v_objet_detail
+        where nom_objet like '%$name%'";
+        $result = mysqli_query(dbconnect(), $sql);
+        // echo $sql;
+        
+        if ($result){
+            $liste = [];
+            while ($row = mysqli_fetch_assoc($result)){
+                $liste[]= $row;
+            } 
+            return $liste;
+        }else{
+            $liste = [];
+            return $liste;
+        }
+    }
+
 ?>
