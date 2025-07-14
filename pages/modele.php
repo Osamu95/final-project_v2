@@ -12,14 +12,17 @@
 
 <header>
     <!-- <h2 class="text-center"><a href="../index.php">Home</a></h2> -->
-    <!-- <ul class="nav nav-underline">
+    <ul class="nav nav-underline">
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../index.php">Home</a>
+            <a class="nav-link" aria-current="page" href="../home.php">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="modele.php?page=stat.php">Stats des emplois</a>
+            <a class="nav-link" aria-current="page" href="modele.php?page=formulaire.php">Ajouter un objet</a>
         </li>
-    </ul> -->
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../inc/connect/deconnect.php">Deconnexion</a>
+        </li>
+    </ul>
 </header>
 
 

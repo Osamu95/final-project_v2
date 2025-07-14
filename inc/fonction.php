@@ -8,7 +8,7 @@ ini_set("display error", "1");
         $sql = "insert into final_membre(email,mdp,nom,date_naissance,genre,ville,image_profil) values ('%s','%s','%s','%s','%s','%s','default.png')";
         $sql= sprintf($sql, $email,$mdp,$nom,$date_naissance,$genre,$ville);
 
-        echo $sql;
+        //echo $sql;
         $result = mysqli_query(dbconnect(), $sql);
     }
     
@@ -75,7 +75,7 @@ ini_set("display error", "1");
     function afficher_categorie(){
         $sql =" SELECT * from final_categorie_objet";
         $result = mysqli_query(dbconnect(), $sql);
-        echo $sql;
+        //echo $sql;
         
         if ($result){
             $liste = [];
@@ -93,7 +93,7 @@ ini_set("display error", "1");
         $sql = "SELECT * from v_objet_detail
         where id_categorie = $id";
         $result = mysqli_query(dbconnect(), $sql);
-        echo $sql;
+        //echo $sql;
         
         if ($result){
             $liste = [];
@@ -105,6 +105,27 @@ ini_set("display error", "1");
             $liste = [];
             return $liste;
         }
+    }
+    
+
+    function add_objet($nomobjet, $idcategorie, $idmembre){
+        //$sql="insert into v_objet_images_simple(nom_objet, id_categorie, id_membre, nom_image)
+        //values ('%s', $idcategorie, $idmembre, '%s')";
+
+        $sql="insert into final_objet values '%s', $idcategorie, $idmembre";
+        $sql = sprintf($sql, $nomobjet);
+        echo $sql;
+        $result = mysqli_query(dbconnect(),$sql);
+        if ($list = mysqli_fetch_assoc($result)) {
+            return $list['id_objet'];
+        }
+    }
+
+    function add_images($nomimage, $id){
+        $sql="insert into final_images_objet(id_objet, nom_image) values $id, '%s'" ;
+        $sql = sprintf($sql, $nomimage);
+        echo $sql;
+        $result = mysqli_query(dbconnect(),$sql);
     }
 
 ?>

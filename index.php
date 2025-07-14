@@ -1,3 +1,3 @@
 <?php
-header("Location:pages/modele.php?page=index.php");
+header("Location:pages/index.php");
 ?>

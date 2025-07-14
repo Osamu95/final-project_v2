@@ -99,3 +99,26 @@ SELECT
 FROM final_objet o
 JOIN final_categorie_objet c ON o.id_categorie = c.id_categorie
 JOIN final_membre m ON o.id_membre = m.id_membre;
+
+CREATE OR REPLACE VIEW v_objet_images AS
+SELECT 
+    v.id_objet,
+    v.nom_objet,
+    v.id_categorie,
+    v.nom_categorie,
+    v.id_membre,
+    v.nom_membre,
+    i.id_image,
+    i.nom_image
+FROM v_objet_detail v
+JOIN final_images_objet i ON v.id_objet = i.id_objet;
+
+CREATE OR REPLACE VIEW v_objet_images_simple AS
+SELECT 
+    v.id_objet,
+    v.nom_objet,
+    v.id_categorie,
+    v.id_membre,
+    i.nom_image
+FROM v_objet_detail v
+JOIN final_images_objet i ON v.id_objet = i.id_objet;
