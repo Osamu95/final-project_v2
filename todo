@@ -29,3 +29,24 @@ filtre
     php 
         traitement2
         catégorie selectionnee -> afficher les objets de la catégorie 
+
+version 2
+
+upload
+    html
+        formulaire a completer pour ajouter un objet [OK]
+
+    php
+        traitement
+        -fonction pour ajouter dans la base
+        -ajouter les images [OK]
+
+fiche
+    html
+        bouton qui mene vers fiche [OK]
+
+    php
+        afficher les infos sur l'objet
+
+recherche
+    
